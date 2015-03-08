@@ -42,11 +42,11 @@ void setup() {
 void loop() {
   // Add your S-o-S code here : Code written here will run forever
   // Steps to be implemented -->
-  // Step1 : LED should be turned on for 250ms
+  // Step1 : LED should be turned on for 100ms
   // Step2 : LED should be turned off for 50ms
-  // Step3 : LED should be turned on for 100ms
+  // Step3 : LED should be turned on for 250ms
   // Step4 : LED should be turned off for 50ms
-  // Step5 : LED should be turned on for 250ms
+  // Step5 : LED should be turned on for 100ms
   // Step6 : LED should be turned off for 5sec
 }
 

@@ -34,7 +34,7 @@
 /* Global Function Declearation */
 
 void setup() {
-  pinMode(9,OUTPUT);         // Making GPIO Pin13(LED) as an Output Pin
+  pinMode(9,OUTPUT);         // Making GPIO Pin9(LED) as an Output Pin
   digitalWrite(9, LOW);      // Making sure that the LED is initially off 
 }
 
