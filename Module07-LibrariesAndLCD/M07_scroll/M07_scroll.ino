@@ -5,7 +5,7 @@
  *  Module Number: M07  
  *  Module Title:  Arduino Libraries and Fun with LCD's
  *
- *  Module Statement: Interfacing a JHD162A lcd with Arduino and printing a simple text.
+ *  Module Statement: Interfacing a simple Button Sensor 
  *
  *  Learning Objectives: 
  *  •  Understanding Display Modules and their operation
@@ -18,17 +18,19 @@
  *  •  10 KOhm Potentiometer 
  *
  *  Hardware Connections:                   Actual LCD Pins( JHD162A has 16 pins)          Connect to Arduino Pins
- *  LCD VSS pin                             [1]                                            [ground]
- *  LCD VCC pin                             [2]                                            [5V]
- *  LCD VEE pin                             [3]-----------[~500 Ohm Resistor]--------------[ground]
  *  LCD RS pin                              [4]                                            [12]
- *  LCD R/W pin                             [5]                                            [ground]
  *  LCD Enable pin                          [6]                                            [11]
  *  LCD D0-D3 pin                           [7,8,9,10]                                     [ground]
  *  LCD D4 pin                              [11]                                           [5]
  *  LCD D5 pin                              [12]                                           [4]
  *  LCD D6 pin                              [13]                                           [3]
  *  LCD D7 pin                              [14]                                           [2]
+ *  LCD R/W pin                             [5]                                            [ground]
+ *  LCD VSS pin                             [1]                                            [ground]
+ *  LCD VCC pin                             [2]                                            [5V]
+ *  10K resistor(VEE Pin):                  [3]                                            [void]
+ *   ends to +5V and ground
+ *   wiper to LCD VEE Pin                
  *  LCD LED+ pin                            [15]                                           [5V]
  *  LCD LED- pin                            [16]                                           [ground]
  *
@@ -46,14 +48,20 @@
 
 /* Global Function Declearation */
 
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);   // initialize the library with the numbers of the interface pins[Syntax lcd(RS, E, D4, D5, D6, D7)]
+                         // Define the number of lines and Lines per charactor that you are using
+
 void setup() {
-  LiquidCrystal lcd(12, 11, 5, 4, 3, 2);   // initialize the library with the numbers of the interface pins[Syntax lcd(RS, E, D4, D5, D6, D7)]
-  lcd.begin(16,2);                         // Define the number of lines and Lines per charactor that you are using
-  lcd.print("Hello Audience !!");          // Making GPIO Pin_A0 as an Input Pin
-}
+lcd.begin(16,2);       // Define the number of lines and Lines per charactor that you are using
+}  
 
 void loop() {
-
+for(int i = 0; i<=15; i++){
+lcd.print("G");
+lcd.setCursor(0,1);
+lcd.clear();
+delay(10);
+}
 }
 
 /* 

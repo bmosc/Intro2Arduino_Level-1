@@ -50,12 +50,12 @@ void loop() {
   for(ctr = 0; ctr <= 255 ; ctr++){     // Loop for fading GREEN LED from dim to bright and BLUE LED from bright to dim
     analogWrite(10,ctr);                 // writing analog voltages to GREEN LED based on loop above
     analogWrite(11,(255-ctr));          // writing Max-Current analog voltages to BLUE LED based on loop above
-    delay(30);                            // delay to prolong the fade effect
+    delay(10);                            // delay to prolong the fade effect
   }
   for(ctr = 255; ctr >= 0 ; --ctr){     // Loop for fading BLUE LED from dim to bright and GREEN LED from bright to dim
     analogWrite(10,ctr);                 // writing analog voltages to GREEN LED based on loop above
     analogWrite(11,(255-ctr));          // writing Max-Current analog voltages to BLUE LED based on loop above
-    delay(30);                            // delay to prolong the fade effect
+    delay(10);                            // delay to prolong the fade effect
   }
 }
 

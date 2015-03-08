@@ -5,7 +5,7 @@
  *  Module Number: M07  
  *  Module Title:  Arduino Libraries and Fun with LCD's
  *
- *  Module Statement: Interfacing a JHD162A lcd with Arduino and printing a simple text.
+ *  Module Statement: Interfacing a LCD Module to Arduino and making a Charactor Scroll. 
  *
  *  Learning Objectives: 
  *  •  Understanding Display Modules and their operation
@@ -15,7 +15,7 @@
  *  Hardware Requirements:
  *  •  Arduino Uno
  *  •  16x2 LCD Display Module
- *  •  10 KOhm Potentiometer 
+ *  •  10 KOhm Potentiometer/500 Ohm Resistor/ 1K Resistor 
  *
  *  Hardware Connections:                   Actual LCD Pins( JHD162A has 16 pins)          Connect to Arduino Pins
  *  LCD VSS pin                             [1]                                            [ground]
@@ -46,14 +46,20 @@
 
 /* Global Function Declearation */
 
+/* Global Objects */
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);   // initialize the library with the numbers of the interface pins[Syntax lcd(RS, E, D4, D5, D6, D7)]
+
 void setup() {
-  LiquidCrystal lcd(12, 11, 5, 4, 3, 2);   // initialize the library with the numbers of the interface pins[Syntax lcd(RS, E, D4, D5, D6, D7)]
-  lcd.begin(16,2);                         // Define the number of lines and Lines per charactor that you are using
-  lcd.print("Hello Audience !!");          // Making GPIO Pin_A0 as an Input Pin
-}
+lcd.begin(16,2);       // Define the number of lines and Lines per charactor that you are using
+}  
 
 void loop() {
-
+for(int i = 0; i<=15; i++){               // logic for scrolling a LCD Char you can also use lcd.scrollDisplayLeft();/ lcd.scrollDisplayRight();
+  lcd.print("G");
+  lcd.setCursor(0,1);
+  lcd.clear();
+  delay(10);
+ }
 }
 
 /* 

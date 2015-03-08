@@ -51,9 +51,9 @@ void loop() {
   Y_axis = analogRead(A1);       // Reading the analog value from Pin_A0 into variable Y_axis
 
   Serial.print("X= ");           // Printing an Informative message  Serial.print(X); 
-  Serial.print(X);               // Printing X axis data to serial terminal
+  Serial.print(X_axis);               // Printing X axis data to serial terminal
   Serial.print(" :  Y= ");       // Printing an Informative message  Serial.print(X);
-  Serial.println(Y);             // Printing Y axis data to serial terminal
+  Serial.println(Y_axis);             // Printing Y axis data to serial terminal
   delay(1);                      // delay in between reads for stability
 }
 
